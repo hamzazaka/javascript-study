@@ -5,31 +5,30 @@ import Allusers from './components/Allusers';
 
 function App() {
   const [people,setpeople]=useState(0);
-  const [isloading,setisloading]=useState(false)
-
-  const fetchData=async()=>{
-    const apiURL = "https://randomuser.me/api/?results=20";
-    let response = await fetch(apiURL);
-    let data= await response.json();
-    setpeople(data)
+  const [add,setadd]=useState(0);
+  const [subtract,setsubtract]=useState(0);
+  let initialcount=0
+  const [finalvalue,setfinalvalue]=useState(initialcount);
+  
+  // const fetchData=async()=>{
+  //   const apiURL = "https://randomuser.me/api/?results=20";
+  //   let response = await fetch(apiURL);
+  //   let data= await response.json();
+  //   setpeople(data)
     
-  }
+  // }
 
-  useEffect(()=>{
-    fetchData()
-  },[])
+  // useEffect(()=>{
+  //   fetchData()
+  // },[])
 
-  console.log(people);
 
   return (
-    people&&
     <div className="App">
-      <h1>hello world</h1>
-      <Suspense fallback={people}>
-      <Allusers people={people} />
-      </Suspense>
+      <h4>the value is {finalvalue}</h4>
+      <button onClick={() => setfinalvalue((c) => c + 1)}> Click me to add</button>
+      <button onClick={() => setfinalvalue((c) => c==0?0:c - 1)}> Click me to subtract</button>
     </div>
-    
   );
 }
 

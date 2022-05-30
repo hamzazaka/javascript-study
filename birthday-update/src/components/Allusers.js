@@ -1,13 +1,8 @@
 import React from 'react'
 
-export default function Allusers({people}) {
-    console.log(people);
+export default function Allusers() {
   return (
-    <>
-    
-     <h1>{people.results[0].email}</h1>
-    <h1>hello</h1>
-    </>
-      
+    <div>Allusers</div>
   )
 }
+

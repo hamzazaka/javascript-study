@@ -10,17 +10,17 @@ function App() {
   let initialcount=0
   const [finalvalue,setfinalvalue]=useState(initialcount);
   
-  // const fetchData=async()=>{
-  //   const apiURL = "https://randomuser.me/api/?results=20";
-  //   let response = await fetch(apiURL);
-  //   let data= await response.json();
-  //   setpeople(data)
+  const fetchData=async()=>{
+    const apiURL = "https://randomuser.me/api/?results=20";
+    let response = await fetch(apiURL);
+    let data= await response.json();
+    setpeople(data)
     
-  // }
+  }
 
-  // useEffect(()=>{
-  //   fetchData()
-  // },[])
+  useEffect(()=>{
+    fetchData()
+  },[])
 
 
   return (
